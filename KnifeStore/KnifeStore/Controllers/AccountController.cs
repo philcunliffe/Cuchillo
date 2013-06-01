@@ -80,7 +80,15 @@ namespace KnifeStore.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    object accountDetails = new
+                    {
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        EmailAddress = model.EmailAddress,
+                        Birthday = model.Birthday,
+                        Subscribed = model.Subscribed
+                    };
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, accountDetails);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

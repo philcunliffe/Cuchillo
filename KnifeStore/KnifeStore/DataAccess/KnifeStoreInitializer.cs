@@ -11,17 +11,17 @@ namespace KnifeStore.DataAccess
     {
         protected override void Seed(KnifeStoreContext context)
         {
-            var addresses = new List<Address>
-            {
-                new Address { AddressLine1 = "120 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
-                new Address { AddressLine1 = "121 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
-                new Address { AddressLine1 = "122 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
-                new Address { AddressLine1 = "123 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
-                new Address { AddressLine1 = "124 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
-                new Address { AddressLine1 = "125 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" }
-            };
-            addresses.ForEach(a => context.Addresses.Add(a));
-            context.SaveChanges();
+            //var addresses = new List<Address>
+            //{
+            //    new Address { AddressLine1 = "120 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
+            //    new Address { AddressLine1 = "121 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
+            //    new Address { AddressLine1 = "122 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
+            //    new Address { AddressLine1 = "123 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
+            //    new Address { AddressLine1 = "124 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" },
+            //    new Address { AddressLine1 = "125 Twinkle Way NW", City="Gold Coast", State=States.WA, Zip="11111" }
+            //};
+            //addresses.ForEach(a => context.Addresses.Add(a));
+            //context.SaveChanges();
 
             //var billingInfo = new List<BillingInfo>
             //{

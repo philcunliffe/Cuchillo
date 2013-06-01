@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using KnifeStore.Filters;
 using KnifeStore.Models;
+using KnifeStore.DataAccess;
 
 namespace KnifeStore.Controllers
 {
@@ -263,7 +264,7 @@ namespace KnifeStore.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (KnifeStoreContext db = new KnifeStoreContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

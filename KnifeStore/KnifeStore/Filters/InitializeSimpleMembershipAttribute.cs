@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using KnifeStore.Models;
+using KnifeStore.DataAccess;
 
 namespace KnifeStore.Filters
 {
@@ -25,11 +26,11 @@ namespace KnifeStore.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<KnifeStoreContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new KnifeStoreContext())
                     {
                         if (!context.Database.Exists())
                         {
@@ -38,7 +39,7 @@ namespace KnifeStore.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("KnifeStoreContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KnifeStore.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,15 +9,15 @@ using System.Web.Security;
 
 namespace KnifeStore.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DefaultConnection")
-        {
-        }
+    //public class UsersContext : DbContext
+    //{
+    //    public UsersContext()
+    //        : base("KnifeStoreContext")
+    //    {
+    //    }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
+    //    public DbSet<UserProfile> UserProfiles { get; set; }
+    //}
 
     [Table("UserProfile")]
     public class UserProfile
@@ -25,6 +26,11 @@ namespace KnifeStore.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime Birthday { get; set; }
+        public string EmailAddress { get; set; }
+        public bool Subscribed { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -72,6 +78,10 @@ namespace KnifeStore.Models
 
     public class RegisterModel
     {
+        public RegisterModel() {
+            this.Subscribed = false;
+        }
+
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
@@ -86,6 +96,31 @@ namespace KnifeStore.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email address")]
+        public string EmailAddress { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Date of birth")]
+        public DateTime Birthday { get; set; }
+
+        [Display(Name = "Wan't us to notify you when we post a new deal?")]
+        public bool Subscribed { get; set; }
+
+        //public DateTime JoinDate { get; set; }
     }
 
     public class ExternalLogin

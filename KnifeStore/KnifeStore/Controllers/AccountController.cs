@@ -18,6 +18,13 @@ namespace KnifeStore.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        private KnifeStoreContext db = new KnifeStoreContext();
+
+        public ActionResult Index()
+        {
+            return View(db.UserProfiles.ToList());
+        }
+
         //
         // GET: /Account/Login
 

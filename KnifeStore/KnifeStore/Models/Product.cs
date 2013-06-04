@@ -18,7 +18,7 @@ namespace KnifeStore.Models
         public double ShippingWeight { get; set; }
         public string Country { get; set; }
         public ProductTypes ProductType { get; set; }
-        public virtual ICollection<Customer> Subscribers { get; set; }
+        public virtual ICollection<UserProfile> Subscritions { get; set; }
     }
 
     public class Knife : Product

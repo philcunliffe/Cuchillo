@@ -34,16 +34,16 @@ namespace KnifeStore.DataAccess
             //billingInfo.ForEach(bi => context.BillingInfo.Add(bi));
             //context.SaveChanges();
 
-            var customers = new List<Customer>
-            {
-                new Customer { Email="mary@perkins.com", FirstName="Mary", LastName="Perkins", Subscribed=true },
-                new Customer { Email="Jimmy@perkins.com", FirstName="Jimmy", LastName="Perkins", Subscribed=false },
-                new Customer { Email="Johnny@perkins.com", FirstName="Johnny", LastName="Perkins", Subscribed=true },
-                new Customer { Email="Mindy@perkins.com", FirstName="Mindy", LastName="Perkins", Subscribed=false },
-                new Customer { Email="Bob@perkins.com", FirstName="Bob", LastName="Perkins", Subscribed=true }
-            };
-            customers.ForEach(c => context.Customers.Add(c));
-            context.SaveChanges();
+            //var customers = new List<Customer>
+            //{
+            //    new Customer { Email="mary@perkins.com", FirstName="Mary", LastName="Perkins", Subscribed=true },
+            //    new Customer { Email="Jimmy@perkins.com", FirstName="Jimmy", LastName="Perkins", Subscribed=false },
+            //    new Customer { Email="Johnny@perkins.com", FirstName="Johnny", LastName="Perkins", Subscribed=true },
+            //    new Customer { Email="Mindy@perkins.com", FirstName="Mindy", LastName="Perkins", Subscribed=false },
+            //    new Customer { Email="Bob@perkins.com", FirstName="Bob", LastName="Perkins", Subscribed=true }
+            //};
+            //customers.ForEach(c => context.Customers.Add(c));
+            //context.SaveChanges();
 
             var products = new List<Product>
             {
@@ -53,8 +53,6 @@ namespace KnifeStore.DataAccess
             };
             products.ForEach(p => context.Products.Add(p));
             context.SaveChanges();
-
-            //BOOKMARK
         }
     }
 }

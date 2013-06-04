@@ -12,8 +12,8 @@ namespace KnifeStore.DataAccess
     {
         //public DbSet<Address> Addresses { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        //public DbSet<Customer> Customers { get; set; }
+        //public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         //public DbSet<BillingInfo> BillingInfo { get; set; }

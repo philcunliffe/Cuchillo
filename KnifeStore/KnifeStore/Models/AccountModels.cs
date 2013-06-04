@@ -31,6 +31,7 @@ namespace KnifeStore.Models
         public DateTime Birthday { get; set; }
         public string EmailAddress { get; set; }
         public bool Subscribed { get; set; }
+        public virtual ICollection<Subscription> Subscriptions { get; set; }
     }
 
     public class RegisterExternalLoginModel

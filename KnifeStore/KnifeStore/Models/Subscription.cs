@@ -8,7 +8,7 @@ namespace KnifeStore.Models
     public class Subscription
     {
         public int SubscriptionId { get; set; }
-        public int UserId { get; set; }
+        public int UserProfileId { get; set; }
         public int ProductId { get; set; }
     }
 }

@@ -17,8 +17,13 @@ namespace KnifeStore.Models
         public double Price { get; set; }
         public double ShippingWeight { get; set; }
         public string Country { get; set; }
+        public DateTime DateAdded { get; set; }
+        public ProductStatus ProductStatus { get; set; }
         public ProductTypes ProductType { get; set; }
-        public virtual ICollection<UserProfile> Subscritions { get; set; }
+        //public Uri ThumbNailPhoto { get; set; }
+        //public Uri MobilePhoto { get; set; }
+        //public Uri NormalPhoto { get; set; }
+        //public Uri LargePhoto { get; set; }
     }
 
     public class Knife : Product

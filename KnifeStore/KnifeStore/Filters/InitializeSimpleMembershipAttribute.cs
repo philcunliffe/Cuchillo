@@ -39,7 +39,7 @@ namespace KnifeStore.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("KnifeStoreContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    //WebSecurity.InitializeDatabaseConnection("KnifeStoreContext", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

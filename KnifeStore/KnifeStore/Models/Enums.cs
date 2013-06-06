@@ -5,6 +5,13 @@ using System.Web;
 
 namespace KnifeStore.Models
 {
+    public enum ProductStatus
+    {
+        OOS,
+        ORD,
+        SHP,
+        INS
+    }
     public enum ProductTypes
     {
         KNIF,

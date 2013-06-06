@@ -15,7 +15,6 @@ using KnifeStore.DataAccess;
 namespace KnifeStore.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         private KnifeStoreContext db = new KnifeStoreContext();

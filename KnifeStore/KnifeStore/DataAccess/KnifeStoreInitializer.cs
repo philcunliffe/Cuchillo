@@ -47,9 +47,9 @@ namespace KnifeStore.DataAccess
 
             var products = new List<Product>
             {
-                new Product { Country="Japan", Name="Awesome-o Knife", Price=999.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF },
-                new Product { Country="Germany", Name="Stienbringer", Price=499.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF },
-                new Product { Country="France", Name="DABOMB Knife", Price=99.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF }
+                new Product { Country="Japan", Name="Awesome-o Knife", Price=999.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF, DateAdded=DateTime.Now },
+                new Product { Country="Germany", Name="Stienbringer", Price=499.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF, DateAdded=DateTime.Today },
+                new Product { Country="France", Name="DABOMB Knife", Price=99.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF, DateAdded=DateTime.Now },
             };
             products.ForEach(p => context.Products.Add(p));
             context.SaveChanges();

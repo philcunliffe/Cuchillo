@@ -7,12 +7,15 @@ using System.Web;
 using System.Web.Mvc;
 using KnifeStore.Models;
 using KnifeStore.DataAccess;
+using WebMatrix.WebData;
+using KnifeStore.Filters;
 
 namespace KnifeStore.Controllers
 {
     public class ProductsController : Controller
     {
         private KnifeStoreContext db = new KnifeStoreContext();
+        private AccessClasses ac = new AccessClasses(new KnifeStoreContext());
 
         //
         // GET: /Products/
@@ -20,6 +23,31 @@ namespace KnifeStore.Controllers
         public ActionResult Index()
         {
             return View(db.Products.ToList());
+        }
+
+
+        public ActionResult PreviousDeals(string Message = "")
+        {
+            ViewBag.Message = Message;
+
+            ViewBag.RequestedIds = ac.GetUserRequestsFromId(WebSecurity.CurrentUserId);
+
+            var productsOrderedByDate = db.Products.SqlQuery("Select * from dbo.Products p Order by p.DateAdded");
+            return View(productsOrderedByDate);
+        }
+
+        public ActionResult Request(int id = 0)
+        {
+            if (id == 0)
+            {
+                return RedirectToAction("PreviousDeals", new { Message = "<span class=\"error\">Sorry! There was an error</span>" });
+            }
+
+            Subscription toAdd = new Subscription { ProductId = id, UserProfileId = WebSecurity.CurrentUserId };
+            db.Subscriptions.Add(toAdd);
+            db.SaveChanges();
+
+            return RedirectToAction("PreviousDeals", new { Message = "Successfully subscribed to item " + id});
         }
 
         //

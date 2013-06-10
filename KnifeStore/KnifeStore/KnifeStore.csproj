@@ -191,6 +191,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -321,6 +322,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Products\PreviousDeals.cshtml" />
+    <Content Include="_AppStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

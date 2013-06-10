@@ -9,7 +9,7 @@ namespace KnifeStore.DataAccess
 {
     public class AccessClasses
     {
-        private KnifeStoreContext db;
+        public KnifeStoreContext db { get; private set; }
 
         public AccessClasses(KnifeStoreContext db)
         {
@@ -31,6 +31,13 @@ namespace KnifeStore.DataAccess
             {
                 ret.Add(subscription.ProductId);
             }
+
+            return ret;
+        }
+
+        public Subscription GetSubcriptionFromIds(int ProductId, int UserProfileId)
+        {
+            var ret = db.Subscriptions.Where(x => x.UserProfileId == UserProfileId && x.ProductId == ProductId).ToList<Subscription>()[0];
 
             return ret;
         }

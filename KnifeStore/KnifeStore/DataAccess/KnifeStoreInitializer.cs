@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using KnifeStore.Models;
+using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace KnifeStore.DataAccess
 {
-    public class KnifeStoreInitializer : DropCreateDatabaseAlways<KnifeStoreContext>
+    public class KnifeStoreInitializer : DropCreateDatabaseIfModelChanges<KnifeStoreContext>
     {
         protected override void Seed(KnifeStoreContext context)
         {
@@ -51,6 +53,7 @@ namespace KnifeStore.DataAccess
                 new Product { Country="Germany", Name="Stienbringer", Price=499.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF, DateAdded=DateTime.Today },
                 new Product { Country="France", Name="DABOMB Knife", Price=99.99, ShippingWeight=10.5, ProductType=ProductTypes.KNIF, DateAdded=DateTime.Now },
             };
+
             products.ForEach(p => context.Products.Add(p));
             context.SaveChanges();
         }

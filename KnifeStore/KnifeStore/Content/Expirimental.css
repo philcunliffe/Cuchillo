@@ -1,0 +1,252 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*End reset*/
+
+/*Begin standards*/
+h1 { font-size: 4.875em }
+h2 { font-size: 3.5em }
+h3 { font-size: 2.5em }
+h4 { font-size: 1.5em }
+h5 { font-size: 1.1em }
+
+p { line-height: 1.5em; }
+
+a { text-decoration: none; }
+
+/*Misc classes*/
+.block { display: block; }
+.hidden { display: none; }
+
+/*Main*/
+html, body
+{
+    height: 100%;
+    font-family: "Segoe UI", "Segoe UI Light";
+    font-size: 16px;
+    color: #333;
+}
+
+section#sidebar, section#right-column, div#main-image
+{
+    min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+
+section#sidebar
+{
+    background-color: #1f2b53;
+    width: 31%;
+    float: left;
+    padding-right: 0.5%;
+    color: #fff;
+}
+
+    section#sidebar a
+    {
+        color: #fff;
+    }
+
+        section#sidebar a:visited
+        {
+            color: #ccc;
+        }
+
+    section#sidebar > hgroup,
+    section#sidebar > hgroup h1
+    {
+        display: block;
+        text-transform: uppercase;
+    }
+
+    section#sidebar > hgroup
+    {
+        margin-top: 50px;
+        width: 180px;
+        float: right;
+        clear: both;
+    }
+
+    section#sidebar > hgroup h1
+    {
+        height: 70px;
+        width: 100%;
+        font-family: 'Segoe UI Light','Segoe UI';
+        font-weight: lighter;
+        color: #fff;
+    }
+
+        section#sidebar > hgroup > a:last-child > h1
+        {
+            font-family: 'Segoe UI';
+            font-weight: normal;
+            font-style: italic;
+        }
+
+    section#sidebar > div#login-div
+    {
+        width: 185px;
+        float: right;
+        margin-top: 20px;
+        clear: both;
+        text-align: right;
+    }
+
+    section#sidebar > nav
+    {
+        display: block;
+        float: right;
+        clear: right;
+        text-align: right;
+        margin-top: 20px;
+        font-size: 2.25em;
+    }
+
+        section#sidebar > nav a
+        {
+            display: block;
+            width: 245px;
+            background-color: #a3a3a3;
+            margin: 10px -25px 0 0;
+            padding: 5px 5px 8px 0;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff !important;
+            font-family: "Segoe UI Light";
+        }
+
+        section#sidebar > nav a:hover
+        {
+            /*font-style: italic;
+            font-weight: bold;*/
+            position: relative;
+            left: 10px;
+        }
+
+section#sidebar > nav li#previous-deals
+{
+    margin-top: 25px;
+}
+
+section#content
+{
+    float: left;
+}
+
+    div#main-image
+    {
+        float: left;
+        width: 22%;
+        background-color: #ccc;
+        background: url("/Images/masahisa-santoku.jpg") center no-repeat;
+    }
+
+    section#right-column
+    {
+        float: right;
+        width: 46.5%;
+    }
+
+        section#right-column > *
+        {
+            display: block;
+            float: left;
+            clear: both;
+        }
+
+        section#right-column > #intro-text
+        {
+            margin-top: 200px;
+        }
+
+        section#right-column > #company-text
+        {
+            margin: 10px 0 15px;
+        }
+
+        section#right-column > #buy-cta
+        {
+            height: 65px;
+            font-size: 60px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: #1f2b53;
+            width: 450px;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        section#right-column .description-text
+        {
+            margin-top: 10px;
+            width: 450px;
+        }
+
+        section#right-column #more-details, section#right-column #hide-details-link
+        {
+            display: none;
+        }
+
+        section#right-column .details-link
+        {
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+
+
+/*Less than 1000 pixel width media query*/
+@media (max-width: 1000px)
+{
+    section#sidebar { width: 28% }
+    section#right-column { width: 49.5% }
+    /*section#right-column > #buy-cta, section#right-column > .description-text { width: 350px }*/
+}

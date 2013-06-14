@@ -26,6 +26,10 @@ namespace KnifeStore.Controllers
             return View(ac.db.Products.ToList());
         }
 
+        public ActionResult Sharpening()
+        {
+            return View();
+        }
 
         public ActionResult PreviousDeals(string Message = "")
         {
